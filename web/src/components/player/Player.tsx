@@ -3,14 +3,13 @@ import {parseLinkHeader} from '@web3-storage/parse-link-header'
 import {useLocation} from 'react-router-dom'
 
 interface PlayerProps {
-	cinemaMode: boolean;
 	peerConnectionDisconnected: boolean;
 	setPeerConnectionDisconnected: Dispatch<SetStateAction<boolean>>;
 }
 
 const Player = (props: PlayerProps) => {
 	const apiPath = import.meta.env.VITE_API_PATH;
-	const {cinemaMode, setPeerConnectionDisconnected} = props;
+	const {setPeerConnectionDisconnected} = props;
 
 	const location = useLocation();
 	const videoRef = createRef<HTMLVideoElement>();
@@ -106,12 +105,13 @@ const Player = (props: PlayerProps) => {
 				muted
 				controls
 				playsInline
-				className={`bg-black w-full ${cinemaMode && "h-full"}`}
-				style={cinemaMode ? {
+				className={`bg-black w-full h-full`}
+				style={{
 					maxHeight: '100vh',
 					maxWidth: '100vw'
-				} : {}}
+				}}
 			/>
+			<iframe></iframe>
 
 			{videoLayers.length >= 2 &&
         <select

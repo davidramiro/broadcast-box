@@ -200,8 +200,6 @@ docker-compose up -d
 
 The frontend can be configured by passing these URL Parameters.
 
-- `cinemaMode=true` - Forces the player into cinema mode by adding to end of URL like https://b.siobud.com/myStream?cinemaMode=true
-
 ## Environment Variables
 
 The backend can be configured with the following environment variables.
