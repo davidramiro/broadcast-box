@@ -2,6 +2,7 @@
 import { localeInterface } from "../locale/localeInterface";
 import locale_en from "../locale/en";
 import locale_da from "../locale/da";
+import locale_de from "../locale/de";
 
 interface LocaleProviderProps {
 	children: React.ReactNode;
@@ -53,6 +54,10 @@ export const LocaleTypes: LocaleType[] = [
 		locale: "dk",
 		name: "Dansk"
 	},
+	{
+		locale: "de",
+		name: "Deutsch"
+	},
 ]
 
 const getLocaleInterfaceByLocale = (locale: string) => {
@@ -62,6 +67,9 @@ const getLocaleInterfaceByLocale = (locale: string) => {
 
 		case "dk":
 			return locale_da
+
+		case "de":
+			return locale_de
 
 		default:
 			return locale_en

@@ -1,4 +1,4 @@
-export type localeTypes = "en" | "da"
+export type localeTypes = "en" | "da" | "de"
 
 export interface localeInterface {
   locale: localeTypes,
